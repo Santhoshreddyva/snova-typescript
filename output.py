@@ -1,0 +1,1 @@
+image_analysis(image_path="examples/testdata/image/sample_image.jpg")
