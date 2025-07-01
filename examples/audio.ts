@@ -36,12 +36,12 @@ async function main() {
       },
       { role: 'user', content: 'what is the audio about' },
     ],
-    max_tokens: 1024,
+    max_tokens: 200,
     temperature: 0.01,
     stream: false,
   };
   const completion = await sambanova.audio.reasoning(params);
-  console.log(completion.choices![0]?.delta?.content);
+  console.log(completion.choices);
 
   // ---------------- Explicit streaming params ----------------
 
@@ -62,7 +62,7 @@ async function main() {
       },
       { role: 'user', content: 'what is the audio about' },
     ],
-    max_tokens: 1024,
+    max_tokens: 200,
     temperature: 0.01,
     stream: true,
   };
@@ -118,7 +118,7 @@ export async function createReasoningParams(
       },
       { role: "user" as const, content: 'what is the audio about' },
     ],
-    max_tokens: 1024,
+    max_tokens: 200,
     temperature: 0.01,
     stream: stream,
   };
